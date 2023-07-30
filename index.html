@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-07-30 00:17:16 / Modified: 08:04:12" itemprop="dateCreated datePublished" datetime="2023-07-30T00:17:16+08:00">2023-07-30</time>
+              <time title="Created: 2023-07-30 00:17:16 / Modified: 08:08:05" itemprop="dateCreated datePublished" datetime="2023-07-30T00:17:16+08:00">2023-07-30</time>
             </span>
 
           
@@ -206,18 +206,18 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> skyfisher.github.io</span><br><span class="line">hexo init</span><br><span class="line">hexo start</span><br></pre></td></tr></table></figure>
 
-<p><img src="/../../public/images/image-20230730072126736.png" alt="image-20230730072126736"></p>
+<p><img src="/../../source/imgs/image-20230730072126736.png" alt="image-20230730072126736"></p>
 <ul>
 <li>通过浏览器访问上述地址，就可以在本地通过 localhost:4000访问博客站点了</li>
 </ul>
-<p><img src="/../../public/images/image-20230730072155881.png" alt="image-20230730072155881"></p>
+<p><img src="/../../source/imgs/image-20230730072155881.png" alt="image-20230730072155881"></p>
 <h2 id="配置-Github-托管"><a href="#配置-Github-托管" class="headerlink" title="配置 Github 托管"></a>配置 Github 托管</h2><p>最终我们的博客还是需要发布到线上的，这里我们选择托管在 github 上</p>
-<p><img src="/../../public/images/image-20230730072511004.png" alt="image-20230730072511004"></p>
-<p><img src="/../../public/images/image-20230730072614161.png" alt="image-20230730072614161"></p>
+<p><img src="/../../source/imgs/image-20230730072511004.png" alt="image-20230730072511004"></p>
+<p><img src="/../../source/imgs/image-20230730072614161.png" alt="image-20230730072614161"></p>
 <p>在本机生成sshkey，并将生成的 key 的内容内容拷贝到前步中</p>
-<p><img src="/../../public/images/image-20230730073404884.png" alt="image-20230730073404884"></p>
-<p><img src="/../../public/images/image-20230730073559752.png" alt="image-20230730073559752"></p>
-<p><img src="/../../public/images/image-20230730072857138.png" alt="image-20230730072857138"></p>
+<p><img src="/../../source/imgs/image-20230730073404884.png" alt="image-20230730073404884"></p>
+<p><img src="/../../source/imgs/image-20230730073559752.png" alt="image-20230730073559752"></p>
+<p><img src="/../../source/imgs/image-20230730072857138.png" alt="image-20230730072857138"></p>
 <p>仍需要安装 git的部署插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
@@ -227,9 +227,9 @@
 <p>配置完成之后，我们就可以把本地的内容推送到 github 进行托管了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 清理历史内容</span><br><span class="line">hexo  clean</span><br><span class="line"></span><br><span class="line"># 生成新的内容</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"># 完成部署，推送内容</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p><img src="/../../public/images/image-20230730074800197.png" alt="image-20230730074800197"></p>
+<p><img src="/../../source/imgs/image-20230730074800197.png" alt="image-20230730074800197"></p>
 <p>现在就能在站点上看到刚刚写下的这篇文章了。</p>
-<p><img src="/../../public/images/image-20230730074958541.png" alt="image-20230730074958541"></p>
+<p><img src="/../../source/imgs/image-20230730074958541.png" alt="image-20230730074958541"></p>
 <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><p>Q：如何修改博客的主题?</p>
 <p>A: 文件夹中有一个 theme 的目录，下载相关的 hexo 主题到本目录(例如我自己使用的是 next)，然后在_config.yml文件中配置所选的主题即可</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
