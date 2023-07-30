@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+
+  
+  <meta name="author" content="skyfisher">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2023/07/30/hexo+github 快速搭建个人博客/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/07/30/hexo+github 快速搭建个人博客/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-07-29T16:17:16.284Z">
+          2023-07-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="10-分钟快速搭建个人博客——基于hexo和github"><a href="#10-分钟快速搭建个人博客——基于hexo和github" class="headerlink" title="10 分钟快速搭建个人博客——基于hexo和github"></a>10 分钟快速搭建个人博客——基于hexo和github</h1><h2 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h2><p>博客是技术人最好的名片，虽然在 23 年的当下，内容平台日渐丰富，只要有好的内容，基本不缺发布的平台；但它在笔者心中依然有不可替代的作用，笔者认为写博客主要有以下好处：</p>
+<ul>
+<li><strong>系统化整理个人的知识</strong>，在当前大环境分工日益精细化的情况下，零散的知识点在帮助我们解决复杂的问题上很难发挥作用，体系化的知识梳理后构建的知识体系，则能成为我们解决问题的有力武器；</li>
+<li><strong>呈现个人的思考</strong>，类比职场中的邮件同步，将文字写下来，本身就是一个深度思考和反复推敲的过程，可以帮助我们深度聚焦在一个具体的问题和场景上，避免泛泛而谈；</li>
+<li><strong>沉淀个人的技术影响力</strong>，酒香也怕巷子深，闷头造车越做越窄，拥抱开源拥抱分享，则收获的是更宽广的成长之路。</li>
+</ul>
+<p>本文是此博客的第一篇，本文的主要内容主要是有两个方面，一是如何基于 hexo+github 快速搭建个人专属博客，二是笔者自己在搭建博客过程碰到的一些问题的解答。</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>Hexo 是一个快速、简洁高效的博客网站，安装过程也非常简单，安装好必须的 node 和 git 后，通过 npm 安装的方式，就可以直接安装 hexo 了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装node</span></span><br><span class="line">brew install node</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">brew install git</span><br><span class="line"><span class="comment"># 安装 hexo</span></span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地调试环境"><a href="#本地调试环境" class="headerlink" title="本地调试环境"></a>本地调试环境</h2><p>本地创建文件目录并初始化，这里我选择了创建和博客站点域名一样的目录文件名，在本机上启动 hexo 之后，默认会运行在 4000 端口可以通过 127.0.0.1:4000&#x2F;进行访问。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> skyfisher.github.io</span><br><span class="line">hexo init</span><br><span class="line">hexo start</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20230730072126736.png" alt="image-20230730072126736"></p>
+<p>初始的页面如下图所示，第一个 hello world 页面已经准备就绪，接下里只需要配置好 github，将本地的博客的文件推送到远端，我们的站点就相当于已经建好。</p>
+<p><img src="/images/image-20230730072155881.png" alt="image-20230730072155881"></p>
+<h2 id="配置-Github-托管"><a href="#配置-Github-托管" class="headerlink" title="配置 Github 托管"></a>配置 Github 托管</h2><p>最终我们的博客还是需要发布到线上的，这里我们选择托管在 github 上，首先我们需要配置好 ssh 的自动登录</p>
+<ol>
+<li>在 github 页面上打开设置；</li>
+</ol>
+<p><img src="/images/image-20230730072511004.png" alt="image-20230730072511004"></p>
+<ol start="2">
+<li>选择 SSH and GPG keys 并点击 new SSH key；</li>
+</ol>
+<p><img src="/images/image-20230730072614161.png" alt="image-20230730072614161"></p>
+<ol start="3">
+<li>通过 ssh-keygen在本机生成sshkey，并将生成的 key 的内容内容拷贝到前步的内容中保存；</li>
+</ol>
+<p><img src="/images/image-20230730214614352.png" alt="image-20230730214614352"></p>
+<p><img src="/images/image-20230730073559752.png" alt="image-20230730073559752"></p>
+<p><img src="/images/image-20230730072857138.png" alt="image-20230730072857138"></p>
+<ol start="4">
+<li>仍需要安装 git的部署插件，并修改 hexo 工程文件中的_config.yml内容</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https:/hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:skyfisher/skyfisher.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>配置完成之后，我们就可以把本地的内容推送到 github 进行托管了</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 清理历史内容</span><br><span class="line">hexo  clean</span><br><span class="line"># 生成新的内容</span><br><span class="line">hexo generate</span><br><span class="line"># 完成部署，推送内容</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/image-20230730074800197.png" alt="image-20230730074800197"></p>
+<p>现在就能在站点上看到刚刚写下的这篇文章了。</p>
+<p><img src="/images/image-20230730074958541.png" alt="image-20230730074958541"></p>
+<h2 id="总结-FAQ"><a href="#总结-FAQ" class="headerlink" title="总结&amp;FAQ"></a>总结&amp;FAQ</h2><p>从上述步骤可以看出，快速搭建一个博客站点是非常方便的，不需要我们自己准备服务器、域名等基础设施，就可以快速搭建一个个人站点。剩余的内容就是发挥自己的才智，开启我们的博客之旅了。</p>
+<p><strong>Q：如何修改博客的主题?</strong></p>
+<p>A: 文件夹中有一个 theme 的目录，下载相关的 hexo 主题到本目录(例如我自己使用的是 next)，然后在_config.yml文件中配置所选的主题即可，相关的主题下载可以参考站点：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https:/hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https:/hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Q：本地的截图等文件如何上传？</strong></p>
+<p>A：这里以使用 typora 来编辑本地文件为例子</p>
+<ol>
+<li><p>在 source 目录下创建 images 文件夹，&#x2F;images&#x2F;filename.png 相关的文件在 hexo 服务器上是默认可以访问到的；</p>
+</li>
+<li><p>设置 typora 相关的截图文件存储到固定路径；</p>
+<p><img src="/images/image-20230730083653880.png" alt="image-20230730083653880"></p>
+</li>
+<li><p>配置 typora 的根目录为 source&#x2F;，从而在 mkdown 中插入的图片，在本地和在 hexo 的服务器上，能够用同样的路径明加载到图片</p>
+<p>设置的路径为 格式-&gt;图像-&gt;图片根目录-&gt;选择对应的目录</p>
+<p><img src="/images/image-20230730084149263.png" alt="image-20230730084149263"></p>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 skyfisher
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
